@@ -20,14 +20,14 @@ public class Cactus implements Figures {
 	}
 	
 	
-//	public  void Animation(String a, String b){
-//		if (java.lang.System.currentTimeMillis() % 10 == 0) {
-//			return;
-//		}else if (java.lang.System.currentTimeMillis() %20  == 0) {
-//			return;
-//		}
-//		return;
-//	}
+	public  void Animation(String a, String b){
+		if (java.lang.System.currentTimeMillis() % 10 == 0) {
+			return;
+		}else if (java.lang.System.currentTimeMillis() %20  == 0) {
+			return;
+		}
+		return;
+	}
 
 	public void update() {
 		speedX = cactusSpeed;

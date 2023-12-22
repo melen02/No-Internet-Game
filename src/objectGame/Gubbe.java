@@ -15,7 +15,7 @@ public class Gubbe implements Figures{
 	static float y = GROUND;
 	private float speedY = 0;
 	private BufferedImage cherecterImage;
-//	private long lastImageSwitchTime = 0;
+	private long lastImageSwitchTime = 0;
 	
 	public Gubbe() {
 		setCharacterImage(Data.getResourceImage(("data/gubbeRun1.png")));
@@ -31,22 +31,21 @@ public class Gubbe implements Figures{
 		}
 	}
 	
-	// Konstigt med animationen, bilden hoppar upp efter byte
-//	public void Animation(String a, String b) {
-//	    long currentTime = System.currentTimeMillis();
-//	    if (currentTime - lastImageSwitchTime >= 950) {
-//	        lastImageSwitchTime = currentTime;
-//	        if ((currentTime / 1000) % 2 == 0) {
-//	        	setCharacterImage(Data.getResourceImage(a));
-//	        } else {
-//	        	setCharacterImage(Data.getResourceImage(b));
-//	        }
-//	        
-//	    }
-//	}
+	public void Animation(String a, String b) {
+	    long currentTime = System.currentTimeMillis();
+	    if (currentTime - lastImageSwitchTime >= 950) {
+	        lastImageSwitchTime = currentTime;
+	        if ((currentTime / 1000) % 2 == 0) {
+	        	setCharacterImage(Data.getResourceImage(a));
+	        } else {
+	        	setCharacterImage(Data.getResourceImage(b));
+	        }
+	        
+	    }
+	}
 	
 	public void draw(Graphics g) {
-//		Animation("data/gubbeRun1.png", "data/gubbeRun1.png");
+		Animation("data/gubbeRun2.png", "data/gubbeRun1.png");
 		g.drawImage(getCherecterImage(), (int) x, (int) y, null);
 	}
 	
